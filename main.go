@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/arifbillah24/cloudt/server"
-	"github.com/arifbillah24/opts"
+	"github.com/arifbillah24/cloud-torrent/server"
+	"github.com/arifbillah24/cloud-torrent/opts"
 )
 
 var VERSION = "0.0.0-src" //set with ldflags
