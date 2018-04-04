@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/arifbillah24/cloud-torrent/server"
-	"github.com/arifbillah24/cloud-torrent/opts"
+	"github.com/jpillora/cloud-torrent/server"
+	"github.com/jpillora/opts"
 )
 
 var VERSION = "0.0.0-src" //set with ldflags
@@ -12,7 +12,7 @@ var VERSION = "0.0.0-src" //set with ldflags
 func main() {
 	s := server.Server{
 		Title:      "Cloud Torrent",
-		Port:       9000,
+		Port:       3000,
 		ConfigPath: "cloud-torrent.json",
 	}
 
