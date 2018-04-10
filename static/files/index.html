@@ -36,12 +36,12 @@
 			</h2>
 			<div class="status">
 				<i ng-show="request.count > 0" class="ui circular loading repeat icon"></i>
-				<i ng-click="$root.config.edit = !$root.config.edit;" ng-class="{green: $root.config.edit}"
-				 class="ui circular server icon" style="font-size: 14px;"></i>
 				<i ng-click="$root.omni.edit = !$root.omni.edit;" ng-class="{green: $root.omni.edit}" class="ui circular magnet icon"
 				 style="font-size: 14px;"></i>
 				<i class="ui circular lightning icon" ng-class="{ green: connected, red: !connected }"></i>
 			</div>
+		<center><h4>Please <a href="https://24x7files.com/donate.php" alt="donate"  target="_blank">Donate</a> Some Money For Server Bills</h4>
+                </center>
 		</div>
 		<!-- GLOBAL ERROR MESSAGE ===================== -->
 		<div ng-if="err" class="ui error message">
@@ -55,13 +55,13 @@
 		<section class="torrents" ng-controller="TorrentsController" ng-include src="'template/torrents.html'"></section>
 		<section class="downloads" ng-controller="DownloadsController" ng-include src="'template/downloads.html'"></section>
 
-		<footer><div>
+		<footer>
+			<div>
 				<span>
-				
 					<a href="/" target="_blank">cloud-torrent</a> version {{ state.Stats.Version }} - </span>
 				<span ng-if="numKeys(state.Users) > 1">{{ numKeys(state.Users) }} users connected - </span>
 				<span>
-					<a href="https://golang.org" target="_blank">Go</a> {{ state.Stats.Runtime }}
+					<a href="/" target="_blank">Go</a> {{ state.Stats.Runtime }}
 				</span>
 			</div>
 			<div>
@@ -87,6 +87,7 @@
 
 		</footer>
 
+		
 		<script src="js/vendor/query-string.js"></script>
 		<script src="js/vendor/angular.min.js"></script>
 		<script src="js/vendor/moment.min.js"></script>
