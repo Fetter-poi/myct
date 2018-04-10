@@ -36,6 +36,8 @@
 			</h2>
 			<div class="status">
 				<i ng-show="request.count > 0" class="ui circular loading repeat icon"></i>
+				<i ng-click="$root.config.edit = !$root.config.edit;" ng-class="{green: $root.config.edit}"
+                                  class="ui circular server icon" style="font-size: 14px;"></i>
 				<i ng-click="$root.omni.edit = !$root.omni.edit;" ng-class="{green: $root.omni.edit}" class="ui circular magnet icon"
 				 style="font-size: 14px;"></i>
 				<i class="ui circular lightning icon" ng-class="{ green: connected, red: !connected }"></i>
@@ -50,7 +52,6 @@
 			<p>{{err}}</p>
 		</div>
 
-		<section class="config" ng-controller="ConfigController" ng-include src="'template/config.html'"></section>
 		<section class="omni" ng-controller="OmniController" ng-include src="'template/omni.html'"></section>
 		<section class="torrents" ng-controller="TorrentsController" ng-include src="'template/torrents.html'"></section>
 		<section class="downloads" ng-controller="DownloadsController" ng-include src="'template/downloads.html'"></section>
