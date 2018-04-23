@@ -1,4 +1,6 @@
-<html ng-app="app"> <head>
+<html ng-app="app">
+
+<head>
 	<title ng-bind="state.Stats.Title">Cloud Torrent</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/Lato/Lato.css">
@@ -9,7 +11,10 @@
 		[ng-cloak] {
 			display: none;
 		}
-	</style> </head> <body class="app">
+	</style>
+</head>
+
+<body class="app">
 	<div ng-cloak class="cage">
 		<div ng-if="!connected" class="connect-warning ui inverted vertical masthead center aligned segment">
 			<div class="ui text container">
@@ -24,19 +29,19 @@
 		<!-- TITLE ===================== -->
 		<div class="title">
 			<h2>
-				<a href="https://24x7files.com/login.html" target="_blank" ng-init="logoHover = false"
+				<a href="https://github.com/jpillora/cloud-torrent" target="_blank" ng-init="logoHover = false"
 				 ng-mouseover="logoHover = true" ng-mouseleave="logoHover = false">
 					<i class="blue icon" ng-class="{cloud:!logoHover, github: logoHover}"></i> {{ state.Stats.Title }}
 				</a>
 			</h2>
 			<div class="status">
 				<i ng-show="request.count > 0" class="ui circular loading repeat icon"></i>
+				<i ng-click="$root.config.edit = !$root.config.edit;" ng-class="{green: $root.config.edit}"
+				 class="ui circular server icon" style="font-size: 14px;"></i>
 				<i ng-click="$root.omni.edit = !$root.omni.edit;" ng-class="{green: $root.omni.edit}" class="ui circular magnet icon"
 				 style="font-size: 14px;"></i>
 				<i class="ui circular lightning icon" ng-class="{ green: connected, red: !connected }"></i>
 			</div>
-		<center><h4>Please <a href="https://24x7files.com/donate.php" alt="donate" target="_blank">Donate</a> Some Money For Server Bills</h4>
-                </center>
 		</div>
 		<!-- GLOBAL ERROR MESSAGE ===================== -->
 		<div ng-if="err" class="ui error message">
@@ -44,9 +49,12 @@
 			<div class="header">Error</div>
 			<p>{{err}}</p>
 		</div>
+
+		<section class="config" ng-controller="ConfigController" ng-include src="'config.html'"></section>
 		<section class="omni" ng-controller="OmniController" ng-include src="'template/omni.html'"></section>
 		<section class="torrents" ng-controller="TorrentsController" ng-include src="'template/torrents.html'"></section>
-		<section class="downloads" ng-controller="DownloadsController" ng-include src="'template/downloads.html'"></section>
+		<section class="downloads" ng-controller="DownloadsController" ng-include src="'downloads.html'"></section>
+
 		<footer>
 			<div>
 				<span>
@@ -77,7 +85,7 @@
 				<span ng-if="state.Stats.Uptime">up {{ ago(state.Stats.Uptime) }}</span>
 			</div>
 		</footer>
-		
+
 		<script src="js/vendor/query-string.js"></script>
 		<script src="js/vendor/angular.min.js"></script>
 		<script src="js/vendor/moment.min.js"></script>
@@ -92,7 +100,7 @@
 		<script src="js/utils.js"></script>
 		<script src="js/semantic-checkbox.js"></script>
 		<script src="js/run.js"></script>
-		<script type="text/javascript">
+   <script type="text/javascript">
 		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                 var element = document.getElementById('text');
                 if (isMobile) {
@@ -101,4 +109,7 @@
 			window.location.href ='https://24x7files.com/login.html';
 		}
 	       </script>
-	</div> </body> </html>
+	</div>
+</body>
+
+</html>
